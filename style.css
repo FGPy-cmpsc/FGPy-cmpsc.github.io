@@ -35,6 +35,9 @@ body{
     font-family: Montserrat, serif;
     border-radius: 30px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 15px;
     font-weight: 700;
     border: white;
@@ -392,6 +395,7 @@ body{
 }
 @media screen and (max-width: 600px){
     .header__button{
+        position: absolute;
         visibility: hidden;
     }
     .main-content{
@@ -401,9 +405,6 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-    .fieldset__label{
-        max-width: 600px;
     }
     .main-content__text{
         visibility: hidden;
@@ -445,6 +446,7 @@ body{
         font-weight: 600;
     }
     .info__separator{
+        position: static;
         margin: 20px 0;
     }
     .info__content{
