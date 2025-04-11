@@ -215,12 +215,12 @@ body{
     letter-spacing: 5px;
 }
 .skills{
-    margin: 0 30vw;
+    margin: 0 20vw;
 }
 .skills__block{
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
 }
 .skills__header{
     text-transform: uppercase;
@@ -245,7 +245,9 @@ body{
     font-size: 24px;
     text-align: center;
     word-break: auto-phrase;
-    max-width: 100%;
+    max-width: 250px;
+    min-width: 150px;
+    width: 40vw;
     height: 52px;
 }
 .portfolio__header{
@@ -393,7 +395,6 @@ body{
     margin-bottom: 15px;
 }
 .social-media-icons{
-    max-width: 250px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
