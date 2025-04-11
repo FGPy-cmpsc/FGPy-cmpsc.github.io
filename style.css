@@ -19,10 +19,10 @@ body{
 .header{
     display: flex;
     justify-content: space-between;
-    width: 637px;
+    width: 500px;
     height: 46px;
     padding-top: 65px;
-    margin-right: 292px;
+    margin-right: 10vw;
     position: absolute;
     right: 0;
 }
@@ -64,35 +64,38 @@ body{
     max-height: 50px;
     object-fit: contain;
 }
+.main-content__desc{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 .main-content__text{
+    width: 35vw;
     font-weight: 700;
     color: black;
     font-family: Raleway, serif;
-    position: absolute;
+    padding-left: 10vw;
     z-index: 0;
 }
 .main-content__greeting{
     font-size: 40px;
-    left: 256px;
-    top: 351px;
 }
 .main-content__name{
     font-size: 80px;
-    left: 271px;
-    top: 463px;
 }
 .main-content__specialization{
     color: #909090;
     font-size: 25px;
     font-weight: 800;
-    left: 271px;
-    top: 560px;
 }
 .contact-logos{
-    position: absolute;
-    left: 271px;
-    top: 726px;
+    width: 35vw;
+    margin: 20vh 5vw 10vh 10vw;
     display: flex;
+    flex-wrap: wrap;
     z-index: 0;
 }
 .contact-logos__logo{
@@ -112,7 +115,7 @@ body{
     display: inline-block;
     position: absolute;
     bottom: 0;
-    left: 860px;
+    left: 50vw;
     z-index: 2;
 }
 .avatar__image{
@@ -127,7 +130,7 @@ body{
     position: absolute;
     z-index: 0;
     transform: rotate(10deg);
-    left: 850px;
+    left: 50vw;
     top: -150px;
 }
 .info{
@@ -212,7 +215,7 @@ body{
     letter-spacing: 5px;
 }
 .skills{
-    margin: 0 458px;
+    margin: 0 30vw;
 }
 .skills__block{
     display: flex;
@@ -242,7 +245,7 @@ body{
     font-size: 24px;
     text-align: center;
     word-break: auto-phrase;
-    width: 240px;
+    max-width: 100%;
     height: 52px;
 }
 .portfolio__header{
@@ -331,6 +334,11 @@ body{
     max-width: 760px;
     margin: 70px 30px 30px 30px;
 }
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .form__fieldset{
     display: flex;
     flex-direction: column;
@@ -394,6 +402,12 @@ body{
     color: white;
 }
 @media screen and (max-width: 600px){
+    .avatar{
+        visibility: hidden;
+    }
+    .black_square{
+        visibility: hidden;
+    }
     .header__button{
         position: absolute;
         visibility: hidden;
@@ -404,11 +418,24 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        text-align: center;
         align-items: center;
+    }
+    .main-content__desc{
+        position: static;
     }
     .main-content__text{
         visibility: hidden;
         position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 80%;
+    }
+    .main-content__desc{
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
     }
     .logo{
         visibility: hidden;
@@ -422,6 +449,7 @@ body{
         background-color: rgba(0, 0, 0, 0.32);
     }
     .contact-logos{
+        margin: 0;
         position: static;
         display: flex;
         width: 300px;
@@ -463,6 +491,18 @@ body{
     }
     .info__work-type{
         margin: 40px 70px;
+    }
+    .portfolio__works{
+        display: flex;
+        flex-direction: column;
+    }
+    .portfolio__work-example{
+        visibility: hidden;
+        position: absolute;
+    }
+    #pict_4, #pict_5{
+        visibility: visible;
+        position: static;
     }
     .mobile{
         visibility: visible;
