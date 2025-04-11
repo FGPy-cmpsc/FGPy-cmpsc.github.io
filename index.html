@@ -18,23 +18,26 @@
     <div class="logo">
         <img class="logo__img" src="img.png" alt="">
     </div>
-    <p class="main-content__text main-content__greeting">Hi, I am</p>
-    <p class="main-content__text main-content__name">Tomasz Gajda</p>
-    <p class="main-content__text main-content__greeting mobile"> my name is Thomas</p>
-    <p class="main-content__text main-content__name mobile">I’M A DEVELOPER</p>
-    <p class="main-content__text main-content__specialization">Front-end Developer / UI Designer</p>
-    <img class="info__element info__separator mobile" src="separator.png" alt="">
-    <div class="contact-logos">
-        <div class="contact-logos__logo">
-            <img class="contact-logos__logo__logo-img" src="mail_logo.png" alt="">
-        </div>
-        <div class="contact-logos__logo">
-            <img class="contact-logos__logo__logo-img" src="git_hub_logo.png" alt="">
-        </div>
-        <div class="contact-logos__logo">
-            <img class="contact-logos__logo__logo-img" src="in_logo.png" alt="">
+    <div class="main-content__desc">
+        <p class="main-content__text main-content__greeting">Hi, I am</p>
+        <p class="main-content__text main-content__name">Tomasz Gajda</p>
+        <p class="main-content__text main-content__greeting mobile"> my name is Thomas</p>
+        <p class="main-content__text main-content__name mobile">I’M A DEVELOPER</p>
+        <p class="main-content__text main-content__specialization">Front-end Developer / UI Designer</p>
+        <img class="info__element info__separator mobile" src="separator.png" alt="">
+        <div class="contact-logos">
+            <div class="contact-logos__logo">
+                <img class="contact-logos__logo__logo-img" src="mail_logo.png" alt="">
+            </div>
+            <div class="contact-logos__logo">
+                <img class="contact-logos__logo__logo-img" src="git_hub_logo.png" alt="">
+            </div>
+            <div class="contact-logos__logo">
+                <img class="contact-logos__logo__logo-img" src="in_logo.png" alt="">
+            </div>
         </div>
     </div>
+
     <div class="avatar">
         <img src="avatar.png" alt="" class="avatar__image">
     </div>
@@ -188,10 +191,10 @@ Membership in the science club developed my design skills, which quickly turned 
             <div class="portfolio__work-example">
                 <img class="work-image" src="work3.png" alt="">
             </div>
-            <div class="portfolio__work-example">
+            <div class="portfolio__work-example" id="pict_4">
                 <img class="work-image" src="work2.png" alt="">
             </div>
-            <div class="portfolio__work-example">
+            <div class="portfolio__work-example" id="pict_5">
                 <img class="work-image work-image_mirror" src="work3.png" alt="">
             </div>
             <div class="portfolio__work-example">
@@ -210,7 +213,7 @@ Membership in the science club developed my design skills, which quickly turned 
         viverra. In vel urna quis libero viverra facilisis ut ac est.
     </p>
     <img class="info__element info__separator" src="separator.png" alt="">
-    <form class="form" id="my-form" autocomplete="on">
+    <form class="form" id="my-form" autocomplete="on" method="get" action="#">
         <fieldset class="form__fieldset">
             <label class="fieldset__label">
                 <input class="form__field" type="text" name="name" placeholder="ENTER YOUR NAME*">
@@ -226,10 +229,10 @@ Membership in the science club developed my design skills, which quickly turned 
                           placeholder="YOUR MESSAGE*"></textarea>
             </label>
         </fieldset>
+        <button class="info__explore contact__submit-button" type="submit">
+            Submit
+        </button>
     </form>
-    <button form="my-form" class="info__explore contact__submit-button">
-        Submit
-    </button>
 </div>
 <footer class="footer">
     <a class="footer__back-to-top" href="#main">
