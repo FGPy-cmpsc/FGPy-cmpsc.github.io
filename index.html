@@ -10,10 +10,10 @@
 <body>
 <div class="main-content" id="main">
     <header class="header">
-        <a class="header_link header__button" href="#">About me</a>
-        <a class="header_link header__button" href="#">Skills</a>
-        <a class="header_link header__button" href="#">Portfolio</a>
-        <a class="header_link contact-link header__button contact-button" href="#">Contact me</a>
+        <a class="header_link header__button" href="#info">About me</a>
+        <a class="header_link header__button" href="#skills">Skills</a>
+        <a class="header_link header__button" href="#portfolio">Portfolio</a>
+        <a class="header_link contact-link header__button contact-button" href="#contact_me">Contact me</a>
     </header>
     <div class="logo">
         <img class="logo__img" src="img.png" alt="">
@@ -37,13 +37,11 @@
             </div>
         </div>
     </div>
-
     <div class="avatar">
         <img src="avatar.png" alt="" class="avatar__image">
     </div>
-    <div class="black_square"></div>
 </div>
-<section class="info">
+<section class="info" id="info">
     <div class="info__element info__header">
         about me
     </div>
@@ -82,7 +80,7 @@ Membership in the science club developed my design skills, which quickly turned 
         </div>
     </div>
     <img class="info__element info__separator" src="separator.png" alt="">
-    <div class="info__element info__header">
+    <div class="info__element info__header" id="skills">
         skills
     </div>
     <div class="skills">
@@ -161,7 +159,7 @@ Membership in the science club developed my design skills, which quickly turned 
         </div>
     </div>
 </section>
-<div class="portfolio">
+<div class="portfolio" id="portfolio">
     <div class="portfolio__header">
         <div class="info__header">
             portfolio
@@ -204,7 +202,7 @@ Membership in the science club developed my design skills, which quickly turned 
         <p class="portfolio__footer">And many more to come!</p>
     </div>
 </div>
-<div class="info contact">
+<div class="info contact" id="contact_me">
     <div class="info__header contact__header">
         contact
     </div>
@@ -216,17 +214,17 @@ Membership in the science club developed my design skills, which quickly turned 
     <form class="form" id="my-form" autocomplete="on" method="get" action="#">
         <fieldset class="form__fieldset">
             <label class="fieldset__label">
-                <input class="form__field" type="text" name="name" placeholder="ENTER YOUR NAME*">
+                <input class="form__field" type="text" name="name" placeholder="ENTER YOUR NAME*" required>
             </label>
             <label class="fieldset__label">
-                <input class="form__field" type="text" name="surname" placeholder="ENTER YOUR EMAIL*">
+                <input class="form__field" type="text" name="surname" placeholder="ENTER YOUR EMAIL*" required>
             </label>
             <label class="fieldset__label">
                 <input class="form__field" type="tel" name="phone_number" placeholder="PHONE NUMBER">
             </label>
             <label class="fieldset__label">
                 <textarea cols="20" rows="5" class="form__field form__textarea" name="message"
-                          placeholder="YOUR MESSAGE*"></textarea>
+                          placeholder="YOUR MESSAGE*" required></textarea>
             </label>
         </fieldset>
         <button class="info__explore contact__submit-button" type="submit">
