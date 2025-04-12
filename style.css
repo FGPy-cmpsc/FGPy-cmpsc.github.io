@@ -21,7 +21,7 @@ body{
     justify-content: space-between;
     width: 500px;
     height: 46px;
-    padding-top: 65px;
+    padding-top: 20px;
     margin-right: 10vw;
     position: absolute;
     right: 0;
@@ -57,8 +57,8 @@ body{
 }
 .logo{
     position: relative;
-    margin-left: 272px;
-    padding-top: 72px;
+    margin-left: 10vw;
+    padding-top: 90px;
 }
 .logo__img{
     max-height: 50px;
@@ -115,23 +115,25 @@ body{
     display: inline-block;
     position: absolute;
     bottom: 0;
-    left: 50vw;
+    left: 45vw;
     z-index: 2;
 }
 .avatar__image{
     position: absolute;
     bottom: 0;
-    height: 800px;
+    height: 85vh;
 }
-.black_square{
-    width: 1800px;
-    height: 1300px;
+.main-content:before{
+    content: "";
+    width: 100%;
+    height: 150%;
     background-color: black;
     position: absolute;
-    z-index: 0;
+    z-index: 2;
     transform: rotate(10deg);
-    left: 50vw;
-    top: -150px;
+    transform-origin: left bottom;
+    left: 45vw;
+    bottom: 0;
 }
 .info{
     position: relative;
@@ -395,14 +397,30 @@ body{
     margin-bottom: 15px;
 }
 .social-media-icons{
+    width: 150px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .footer_description{
     color: white;
 }
+@media screen and (max-width: 1440px) {
+    .header{
+        margin: 0;
+        background-color: black;
+        width: 100%;
+        justify-content: space-evenly;
+        position: fixed;
+        z-index: 3;
+        padding-bottom: 20px;
+    }
+}
 @media screen and (max-width: 600px){
+    .header{
+        visibility: hidden;
+        display: none;
+    }
     .avatar{
         visibility: hidden;
     }
