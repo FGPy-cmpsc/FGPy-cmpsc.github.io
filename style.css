@@ -405,6 +405,140 @@ body{
 .footer_description{
     color: white;
 }
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 5px;
+}
+
+.popup-image {
+    width: 50vw;
+    min-height: 50vh;
+}
+
+.popup-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+}
+
+.popup-close__img{
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-prev, .popup-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: rgba(100, 0, 0, 0.7);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.popup-prev {
+    left: 15%;
+}
+
+.popup-next {
+    right: 15%;
+}
+
+.form-popup{
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    background-image: url("popup_form_icon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1000;
+}
+
+.popup-form-overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    opacity: 0;
+}
+
+.my-popup-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.form__field_popup{
+    border: none;
+    border-left: 5px solid white;
+    border-bottom: 5px solid white;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 15px 15px 15px 3px;
+    color: white;
+}
+.form__field_popup::placeholder{
+    color: rgb(180, 180, 180);
+}
+.contact__submit-button_popup{
+    margin: 30px 0 60px 0;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 139px;
+    height: 32px;
+}
+.countdown {
+    font: 2rem/1.2 'Segoe UI', sans-serif;
+    letter-spacing: 1px;
+    color: white;
+}
+.cd__item  {
+    min-width: 2ch;
+    display: inline-block;
+    text-align: center;
+}
 @media screen and (max-width: 1440px) {
     .header{
         margin: 0;
