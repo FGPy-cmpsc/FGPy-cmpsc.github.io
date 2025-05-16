@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="main-content" id="main">
-    <header class="header">
+    <header class="header" id="header">
         <a class="header_link header__button" href="#info">About me</a>
         <a class="header_link header__button" href="#skills">Skills</a>
         <a class="header_link header__button" href="#portfolio">Portfolio</a>
@@ -180,13 +180,13 @@ Membership in the science club developed my design skills, which quickly turned 
             </ul>
         </nav>
         <div class="portfolio__works">
-            <div class="portfolio__work-example">
+            <div class="portfolio__work-example" id="pict_1">
                 <img class="work-image" src="work1.png" alt="">
             </div>
-            <div class="portfolio__work-example">
+            <div class="portfolio__work-example" id="pict_2">
                 <img class="work-image" src="work2.png" alt="">
             </div>
-            <div class="portfolio__work-example">
+            <div class="portfolio__work-example" id="pict_3">
                 <img class="work-image" src="work3.png" alt="">
             </div>
             <div class="portfolio__work-example" id="pict_4">
@@ -195,9 +195,19 @@ Membership in the science club developed my design skills, which quickly turned 
             <div class="portfolio__work-example" id="pict_5">
                 <img class="work-image work-image_mirror" src="work3.png" alt="">
             </div>
-            <div class="portfolio__work-example">
+            <div class="portfolio__work-example" id="pict_6">
                 <img class="work-image" src="work1.png" alt="">
             </div>
+        </div>
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-content" id="popupContent">
+                <img src="work1.png" alt="Image 1" class="popup-image" id="popupImage">
+                <button class="popup-close" id="popupClose">
+                    <img src="popup_close.webp" alt="close" class="popup-close__img">
+                </button>
+            </div>
+            <button class="popup-prev" id="popupPrev">&#8249;</button>
+            <button class="popup-next" id="popupNext">&#8250;</button>
         </div>
         <p class="portfolio__footer">And many more to come!</p>
     </div>
@@ -211,28 +221,36 @@ Membership in the science club developed my design skills, which quickly turned 
         viverra. In vel urna quis libero viverra facilisis ut ac est.
     </p>
     <img class="info__element info__separator" src="separator.png" alt="">
-    <form class="form" id="my-form" autocomplete="on" method="get" action="#">
+    <form class="form" id="my-form" autocomplete="on" method="post" action="#" novalidate>
         <fieldset class="form__fieldset">
             <label class="fieldset__label">
-                <input class="form__field" type="text" name="name" placeholder="ENTER YOUR NAME*" required>
+                <input id="name" class="form__field" type="text" name="name" placeholder="ENTER YOUR NAME*" required>
             </label>
             <label class="fieldset__label">
-                <input class="form__field" type="text" name="surname" placeholder="ENTER YOUR EMAIL*" required>
+                <input id="email" class="form__field" type="text" name="email" placeholder="ENTER YOUR EMAIL*" required>
             </label>
             <label class="fieldset__label">
-                <input class="form__field" type="tel" name="phone_number" placeholder="PHONE NUMBER">
+                <input id="phone" class="form__field" type="tel" name="phone_number" placeholder="PHONE NUMBER">
             </label>
             <label class="fieldset__label">
-                <textarea cols="20" rows="5" class="form__field form__textarea" name="message"
+                <textarea id="message" cols="20" rows="5" class="form__field form__textarea" name="message"
                           placeholder="YOUR MESSAGE*" required></textarea>
             </label>
         </fieldset>
-        <button class="info__explore contact__submit-button" type="submit">
+        <button class="info__explore contact__submit-button" id="submitBtn" type="submit">
             Submit
         </button>
     </form>
 </div>
+<div class="form-popup" id="formPopup"></div>
 <footer class="footer">
+    <div class="countdown" id="countdown">
+        <span>Осталось до лета</span><br>
+        <span class="cd__item" id="cd-days">00</span>д&nbsp;
+        <span class="cd__item" id="cd-hours">00</span>ч&nbsp;
+        <span class="cd__item" id="cd-min">00</span>м&nbsp;
+        <span class="cd__item" id="cd-sec">00</span>с
+    </div>
     <a class="footer__back-to-top" href="#main">
         <img class="back-to-top-icon" src="to_top.png" alt="">
         back to top
@@ -247,6 +265,31 @@ Membership in the science club developed my design skills, which quickly turned 
         <b>@2020 Tomasz Gajda</b> All Rights Reserved.
     </p>
 </footer>
+<div class="popup-form-overlay" id="popupFormOverlay">
+    <form class="form my-popup-form" id="my-popup-form" autocomplete="on" method="get" action="#">
+        <fieldset class="form__fieldset">
+            <label class="fieldset__label">
+                <input class="form__field form__field_popup" type="text" name="name" placeholder="ENTER YOUR NAME*" required>
+            </label>
+            <label class="fieldset__label">
+                <input class="form__field form__field_popup" type="text" name="surname" placeholder="ENTER YOUR EMAIL*" required>
+            </label>
+            <label class="fieldset__label">
+                <input class="form__field form__field_popup" type="tel" name="phone_number" placeholder="PHONE NUMBER">
+            </label>
+            <label class="fieldset__label">
+                <textarea cols="20" rows="5" class="form__field form__textarea form__field_popup" name="message"
+                          placeholder="YOUR MESSAGE*" required></textarea>
+            </label>
+        </fieldset>
+        <button class="info__explore contact__submit-button contact__submit-button_popup" type="submit">
+            Submit
+        </button>
+    </form>
+    <button class="popup-close" id="popupFormClose">
+        <img src="popup_close.webp" alt="close" class="popup-close__img">
+    </button>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
