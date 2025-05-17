@@ -224,21 +224,25 @@ Membership in the science club developed my design skills, which quickly turned 
     <form class="form" id="my-form" autocomplete="on" method="post" action="#" novalidate>
         <fieldset class="form__fieldset">
             <label class="fieldset__label">
-                <input id="name" class="form__field" type="text" name="name" placeholder="ENTER YOUR NAME*" required>
+                <input id="name" class="form__field" type="text" name="name" placeholder="ВВЕДИТЕ ВАШЕ ИМЯ*" required>
+                <span class="error-message" id="name-error"></span>
             </label>
             <label class="fieldset__label">
-                <input id="email" class="form__field" type="text" name="email" placeholder="ENTER YOUR EMAIL*" required>
+                <input id="email" class="form__field" type="text" name="email" placeholder="ВВЕДИТЕ ВАШ EMAIL*" required>
+                <span class="error-message" id="email-error"></span>
             </label>
             <label class="fieldset__label">
-                <input id="phone" class="form__field" type="tel" name="phone_number" placeholder="PHONE NUMBER">
+                <input id="phone" class="form__field" type="tel" name="phone_number" placeholder="НОМЕР ТЕЛЕФОНА">
+                <span class="error-message" id="phone-error"></span>
             </label>
             <label class="fieldset__label">
-                <textarea id="message" cols="20" rows="5" class="form__field form__textarea" name="message"
-                          placeholder="YOUR MESSAGE*" required></textarea>
+            <textarea id="message" cols="20" rows="5" class="form__field form__textarea" name="message"
+                      placeholder="ВАШЕ СООБЩЕНИЕ*" required></textarea>
+                <span class="error-message" id="message-error"></span>
             </label>
         </fieldset>
         <button class="info__explore contact__submit-button" id="submitBtn" type="submit">
-            Submit
+            Отправить
         </button>
     </form>
 </div>
@@ -266,23 +270,27 @@ Membership in the science club developed my design skills, which quickly turned 
     </p>
 </footer>
 <div class="popup-form-overlay" id="popupFormOverlay">
-    <form class="form my-popup-form" id="my-popup-form" autocomplete="on" method="get" action="#">
+    <form class="form my-popup-form" id="my-popup-form" autocomplete="on" method="get" action="#" novalidate>
         <fieldset class="form__fieldset">
             <label class="fieldset__label">
-                <input class="form__field form__field_popup" type="text" name="name" placeholder="ENTER YOUR NAME*" required>
+                <input id="popup_name" class="form__field form__field_popup" type="text" name="name" placeholder="ENTER YOUR NAME*" required>
+                <span class="error-message" id="popup-name-error"></span>
             </label>
             <label class="fieldset__label">
-                <input class="form__field form__field_popup" type="text" name="surname" placeholder="ENTER YOUR EMAIL*" required>
+                <input id="popup_email" class="form__field form__field_popup" type="text" name="email" placeholder="ENTER YOUR EMAIL*" required>
+                <span class="error-message" id="popup-email-error"></span>
             </label>
             <label class="fieldset__label">
-                <input class="form__field form__field_popup" type="tel" name="phone_number" placeholder="PHONE NUMBER">
+                <input id="popup_phone" class="form__field form__field_popup" type="tel" name="phone_number" placeholder="PHONE NUMBER">
+                <span class="error-message" id="popup-phone-error"></span>
             </label>
             <label class="fieldset__label">
-                <textarea cols="20" rows="5" class="form__field form__textarea form__field_popup" name="message"
+                <textarea id="popup_message" cols="20" rows="5" class="form__field form__textarea form__field_popup" name="message"
                           placeholder="YOUR MESSAGE*" required></textarea>
+                <span class="error-message" id="popup-message-error"></span>
             </label>
         </fieldset>
-        <button class="info__explore contact__submit-button contact__submit-button_popup" type="submit">
+        <button class="info__explore contact__submit-button contact__submit-button_popup" id="popup_submit" type="submit">
             Submit
         </button>
     </form>
@@ -290,6 +298,11 @@ Membership in the science club developed my design skills, which quickly turned 
         <img src="popup_close.webp" alt="close" class="popup-close__img">
     </button>
 </div>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+    emailjs.init('tjxRLaiVXd9CdTHlz');
+</script>
 <script src="script.js"></script>
 </body>
 </html>
