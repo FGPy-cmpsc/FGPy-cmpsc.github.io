@@ -342,6 +342,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 500px;
 }
 .form__fieldset{
     display: flex;
@@ -362,6 +363,11 @@ body{
     padding: 15px;
     padding-left: 3px;
 }
+.form__field:focus {
+    outline: none;
+    border-left-color: #007bff;
+    border-bottom-color: #007bff;
+}
 .form__textarea{
     resize: none;
 }
@@ -372,6 +378,37 @@ body{
     border-left: 2px solid black;
     border-right: 2px solid black;
     cursor: pointer;
+    transition: background-color 0.4s;
+}
+.contact__submit-button:hover {
+    background-color: black;
+    color: white;
+}
+.contact__submit-button.sending {
+    background-color: #ffc107;
+    color: black;
+    border-color: #ffc107;
+    cursor: wait;
+}
+
+.contact__submit-button.success {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+    cursor: default;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 1em;
+    white-space: normal;
+}
+
+.form__field.invalid {
+    border-left-color: red;
+    border-bottom-color: red;
 }
 .footer{
     background-color: rgba(26, 26, 26, 1);
