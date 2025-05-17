@@ -15,11 +15,6 @@ for (let i = 1; i <= 6; ++i) {
         showImage(currentImageIndex);
         popupNextButton.style.visibility = 'visible';
         popupPrevButton.style.visibility = 'visible';
-        if (currentImageIndex === 0) {
-            popupPrevButton.style.visibility = 'hidden';
-        } else if (currentImageIndex === 5) {
-            popupNextButton.style.visibility = 'hidden';
-        }
     });
 }
 
@@ -28,23 +23,13 @@ popupCloseButton.addEventListener('click', () => {
 });
 
 popupPrevButton.addEventListener('click', () => {
-    currentImageIndex = currentImageIndex - 1;
+    currentImageIndex = (6 + currentImageIndex - 1) % 6;
     showImage(currentImageIndex);
-    if (currentImageIndex === 0) {
-        popupPrevButton.style.visibility = 'hidden';
-    } else {
-        popupNextButton.style.visibility = 'visible';
-    }
 });
 
 popupNextButton.addEventListener('click', () => {
-    currentImageIndex = currentImageIndex + 1;
+    currentImageIndex = (currentImageIndex + 1) % 6;
     showImage(currentImageIndex);
-    if (currentImageIndex === 5) {
-        popupNextButton.style.visibility = 'hidden';
-    } else {
-        popupPrevButton.style.visibility = 'visible';
-    }
 });
 
 function showImage(index) {
@@ -215,11 +200,11 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.style.color = '';
         submitBtn.style.borderColor = '';
 
-        const okName    = validateTextLang(nameInput,    nameError,    'Имя: только русские буквы');
-        const okEmail   = validateField   (emailInput,   EMAIL_REGEX,  emailError,  'Введите корректный email');
+        const okName    = validateTextLang(nameInput,    nameError,    'только русские буквы');
+        const okEmail   = validateField   (emailInput,   EMAIL_REGEX,  emailError,  'введите корректный email');
         const okPhone   = phoneInput.value.trim()==='' ? true
-            : validateField   (phoneInput,   PHONE_REGEX,  phoneError,  'Неверный номер телефона', true);
-        const okMessage = validateTextLang(messageInput, messageError, 'Сообщение: только русские буквы');
+            : validateField   (phoneInput,   PHONE_REGEX,  phoneError,  'неверный номер телефона', true);
+        const okMessage = validateTextLang(messageInput, messageError, 'только русские буквы');
 
         if (!(okName && okEmail && okPhone && okMessage)) return;
 
@@ -298,7 +283,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let ok = true, err = '';
 
         if (!allowEmpty && v === '') { ok = false; err = 'Это поле обязательно.'; }
-        else if (v !== '' && regex && !regex.test(v)) { ok = false; err = msg || 'Неверный формат.'; }
+        else if (v !== '' && regex && !regex.test(v)) {
+            ok = false;
+            err = msg || 'Неверный формат.';
+        }
 
         errorEl.textContent = err;
         input.classList.toggle('invalid', !ok);
@@ -310,7 +298,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (v === '') { ok = false; err = 'Это поле обязательно.'; }
         else if (!(RUS_REGEX.test(v))) {
-            ok = false; err = msg || 'Только русские буквы.';
+            ok = false;
+            err = msg || 'Только русские буквы.';
         }
         errorEl.textContent = err;
         input.classList.toggle('invalid', !ok);
@@ -331,11 +320,11 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn2.style.color = '';
         submitBtn2.style.borderColor = '';
 
-        const okName    = validateTextLang(nameInput2,    nameError2,    'Имя: только русские буквы');
-        const okEmail   = validateField   (emailInput2,   EMAIL_REGEX,  emailError2,  'Введите корректный email');
+        const okName    = validateTextLang(nameInput2,    nameError2,    'только русские буквы');
+        const okEmail   = validateField   (emailInput2,   EMAIL_REGEX,  emailError2,  'введите корректный email');
         const okPhone   = phoneInput2.value.trim()==='' ? true
-            : validateField   (phoneInput2,   PHONE_REGEX,  phoneError2,  'Неверный номер телефона', true);
-        const okMessage = validateTextLang(messageInput2, messageError2, 'Сообщение: только русские буквы');
+            : validateField   (phoneInput2,   PHONE_REGEX,  phoneError2,  'неверный номер телефона', true);
+        const okMessage = validateTextLang(messageInput2, messageError2, 'только русские буквы');
 
         if (!(okName && okEmail && okPhone && okMessage)) return;
 
